@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app>
+
+  <head>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="main">
+    <h1>Hello Plunker!</h1>
+    <br>
+    {{message}}
+    
+    <div>driver name: {{drivers}} </div>
+    
+    <table>
+    <thead>
+      <tr><th colspan="4">Drivers Championship Standings - Static</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="driver in driversListStatic">
+        <td>{{$index + 1}}</td>
+        <td>
+          <img src="img/flags/{{driver.Driver.nationality}}.png" />
+          {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+        </td>
+        <td>{{driver.Constructors[0].name}}</td>
+        <td>{{driver.points}}</td>
+      </tr>
+    </tbody>
+  </table>
+    
+    <table>
+    <thead>
+      <tr><th colspan="4">Drivers Championship Standings - Dynamic</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="driverdynamic in driversListDynamic">
+        <td>{{$index + 1}}</td>
+        <td>
+          <img src="img/flags/{{driverdynamic.Driver.nationality}}.png" />
+          {{driverdynamic.Driver.givenName}}&nbsp;{{driverdynamic.Driver.familyName}}
+        </td>
+        <td>{{driverdynamic.Constructors[0].name}}</td>
+        <td>{{driverdynamic.points}}</td>
+      </tr>
+    </tbody>
+  </table>
+    
+    
+    
+  </body>
+
+</html>
